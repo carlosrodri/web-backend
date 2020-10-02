@@ -7,7 +7,7 @@ articleController.getArticle = async(req, res) =>{
     })
     if (article) {
         res.json({
-            status: 'correct',
+            status: 'ok',
             article: article
         }).status(200)
     } else {
@@ -31,7 +31,7 @@ articleController.getAllArticles = async(req, res) =>{
     console.log(article);
     if (article) {
         res.json({
-            status: 'correct',
+            status: 'ok',
             articles: article
         }).status(200)
     } else {
