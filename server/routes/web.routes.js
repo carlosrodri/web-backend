@@ -12,6 +12,7 @@ const visit = require('../controllers/visit.controller')
 router.get('/article/:article_id', article.getArticle)
 router.get('/article/', article.getAllArticles)
 router.post('/article/', article.addArticle)
+router.put('/article/:id', article.addImgToArticle)
 
 
 /**
