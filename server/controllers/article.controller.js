@@ -1,6 +1,3 @@
-const {
-    ObjectId
-} = require("mongodb");
 const Article = require("../models/article.model");
 const articleController = {}
 
