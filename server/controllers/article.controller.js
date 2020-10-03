@@ -49,17 +49,23 @@ articleController.addImgToArticle = async (req, res) => {
     const article = await Article.findOne({
         _id: req.params.id
     })
-    if (article) {
-        Article.update({
-            _id: ObjectId(req.params.id)
+    console.log(req.body.img, 'imagenes');
+    if (article != null) {
+        Article.findOneAndUpdate({
+            _id: req.params.id
         }, {
             $push: {
-                imgs: req.body
+                imgs: req.body.img
+            }
+        }, function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json({
+                    status: 'ok'
+                }).status(200)
             }
         })
-        res.json({
-            status: 'ok'
-        }).status(200)
     } else {
         res.json({
             status: 'error',

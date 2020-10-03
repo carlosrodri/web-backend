@@ -9,33 +9,33 @@ const visit = require('../controllers/visit.controller')
 /**
  * Routes of Articles
  */
-router.get('/article/:article_id', article.getArticle)
-router.get('/article/', article.getAllArticles)
-router.post('/article/', article.addArticle)
-router.put('/article/:id', article.addImgToArticle)
+router.get('/articles/:article_id', article.getArticle)
+router.get('/articles/', article.getAllArticles)
+router.post('/articles/', article.addArticle)
+router.put('/articles/:id', article.addImgToArticle)
 
 
 /**
  * Routes of Subscribers
  */
-router.get('/subscriber/', subscriber.getAllSubscriber)
-router.get('/subscriber/:subs_id', subscriber.getSubscriberById)
-router.post('/subscriber/', subscriber.addSubsciber)
+router.get('/subscribers/', subscriber.getAllSubscriber)
+router.get('/subscribers/:subs_id', subscriber.getSubscriberById)
+router.post('/subscribers/', subscriber.addSubsciber)
 
 
 /**
  * Routes of Comments
  */
-router.get('/comment/', comment.getAllComments)
-router.get('/comment/:article_id', comment.getCommentsByArticle)
-router.post('/comment/', comment.addComment)
+router.get('/comments/', comment.getAllComments)
+router.get('/comments/:article_id', comment.getCommentsByArticle)
+router.post('/comments/', comment.addComment)
 
 
 /**
  * Routes of Visits
  */
-router.get('/visit/', visit.getAllVisits)
-router.get('/visit/:date', visit.getvisitsByDate)
-router.post('/visit/', visit.addVisit)
+router.get('/visits/', visit.getAllVisits)
+router.get('/visits/:date', visit.getvisitsByDate)
+router.post('/visits/', visit.addVisit)
 
 export default router
