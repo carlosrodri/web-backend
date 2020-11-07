@@ -28,8 +28,7 @@ articleController.addArticle = async (req, res) => {
 
 articleController.getAllArticles = async (req, res) => {
     const article = await Article.find()
-    console.log(article);
-    if (article) {
+    if (article.length > 0) {
         res.json({
             status: 'ok',
             articles: article
@@ -71,5 +70,13 @@ articleController.addImgToArticle = async (req, res) => {
     }
 }
 
-
+articleController.delete = async (req, res) => {
+    await Article.findByIdAndDelete({
+        _id: req.params.id
+    });
+    res.json({
+        status: 'succes',
+        message: 'has been deleted'
+    })
+}
 module.exports = articleController

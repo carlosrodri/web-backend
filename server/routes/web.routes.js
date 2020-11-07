@@ -12,6 +12,7 @@ const visit = require('../controllers/visit.controller')
 router.get('/articles/:article_id', article.getArticle)
 router.get('/articles/', article.getAllArticles)
 router.post('/articles/', article.addArticle)
+router.delete('/articles/:id', article.delete)
 router.put('/articles/:id', article.addImgToArticle)
 
 
@@ -27,6 +28,7 @@ router.post('/subscribers/', subscriber.addSubsciber)
  * Routes of Comments
  */
 router.get('/comments/', comment.getAllComments)
+router.delete('/comments/:id', comment.delete)
 router.get('/comments/:article_id', comment.getCommentsByArticle)
 router.post('/comments/', comment.addComment)
 
