@@ -1,13 +1,34 @@
-const mongoose = require('mongoose')
-const Comment = require('./comment.model')
-const { Schema } = mongoose;
+const mongoose = require('mongoose');
+const Comment = require('./comment.model');
+const {
+    Schema
+} = mongoose;
+
+const tagSchema = new Schema({
+    kindTag: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: false
+    }
+});
+
 
 const articleSchema = new Schema({
-    title: {type: String, required: true},
-    description: {type: String, required: true},
-    date: {type: Date, default: Date.now},
-    imgs: {type: [String], required: false},
-    comments: {type: [mongoose.Schema.Types.ObjectId], ref: 'Comment', required: false}
+    tags: {
+        type: [tagSchema]
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    comments: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'comment',
+        required: false
+    }
 });
 
 module.exports = mongoose.model('Article', articleSchema);
