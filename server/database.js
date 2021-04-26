@@ -8,7 +8,7 @@
     
     
     const UR = 'mongodb://localhost/web'
-    const uri = "mongodb+srv://admin:abc.52106@mywebpage.5cmep.mongodb.net/MyWebPage?retryWrites=true&w=majority";
+    const uri = "here your production db url";
 
     mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((db) => {
